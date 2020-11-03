@@ -24,12 +24,13 @@ ikea %>%
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank(),
         axis.title.y=element_blank(),
-        panel.spacing = unit(0.25, "lines"),
+        panel.spacing = unit(0.5, "lines"),
         axis.text=element_text(size=12),
         axis.title=element_text(size=12,face="bold"),
         strip.text = element_text(size=12, face="bold"),
         strip.background = element_rect(fill="#f7f7f7"))+
-  scale_y_continuous(labels = function(x) paste0("Â£",comma(x)))+
+  scale_y_continuous(labels = function(x) paste0("£",comma(x)))+
   ggtitle("A brief tour of IKEA prices")
 
-ggsave("IKEA.prices.png", dpi=300)
+ggsave("EdBIkeaPrices.png", dpi=300,
+       width=7, height=11)
